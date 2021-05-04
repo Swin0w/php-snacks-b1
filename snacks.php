@@ -3,19 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>Snacks</title>
-    <style media="screen">
-      .home {
-        background-color: orange;
-        width: 200px;
-        height: 200px;
-      }
-      .guest {
-        background-color: green;
-        width: 200px;
-        height: 200px;
-      }
-    </style>
   </head>
+  <style media="screen">
+    li {
+      list-style-type: none;
+      display: block;
+    }
+  </style>
   <body>
     <h1>Snacks 1</h1>
     <p>
@@ -25,43 +19,47 @@
     </p>
     <p>Olimpia Milano - Cantù | 55-60</p>
     <h2>MATCH DI OGGI</h2>
-    <?php
-    $calendary = [
-      'match' => [
-        'home' => [
-          'name' => 'Aquila Basket',
-          'name' => 'Pallacanestro Brescia',
-          'name' => 'Fortitudo Pallacanestro'
-        ],
-        'guest' => [
-          'name' => 'Pistoia Basket',
-          'name' => 'Mennsana Basket',
-          'name' => 'Reyer Venezia Mestre'
-        ],
-        'homepoints' => [
-          'pt' => 55,
-          'pt' => 32,
-          'pt' => 62
-        ],
-        'guestpoints' => [
-          'pt' => 64,
-          'pt' => 88,
-          'pt' => 58,
-        ]
-      ]
-      $team = $calendary['match'];
-      $hometeam = $team['home'];
-      $guesteam = $team['guest'];
-      $homept = $team['homepoints'];
-      $guestpt = $team['guestpoints'];
-
-      for($i=0;$i<count($hometeam);$i++){
-        if($hometeam) {
-          echo "<div class='home'>" . $hometeam[$i] . $homept[$i] . "</div>";
-        } else {
-          echo "<div class='guest'>" . $guesteam[$i] . $guestpt[$i] . "</div>";
+    <ul>
+        <?php
+        $calendary = [
+          [
+            'home' => "Pistoia Basket",
+            'away' => "Reyer Venezia Mestre",
+            'homepoints' => 55,
+            'guestpoints' => 65
+          ],
+          [
+            'home' => "Fortitudo Pallacanestro",
+            'away' => "Allianz Pallacanestro",
+            'homepoints' => 88,
+            'guestpoints' => 44
+          ],
+          [
+            'home' => "Mennsana Basket",
+            'away' => "Pallacanestro Viola",
+            'homepoints' => 96,
+            'guestpoints' => 12
+          ],
+          [
+            'home' => "Tigers Cesena",
+            'away' => "Pallacanestro Pavia",
+            'homepoints' => 110,
+            'guestpoints' => 8
+          ]
+        ];
+        for($i=0;$i<count($calendary);$i++){
+          echo "<li>";
+          echo "<b>Partità: </b>" . $calendary[$i]['home'] . " - " . $calendary[$i]['away'] . " | " . $calendary[$i]['homepoints'] . "-" . $calendary[$i]['guestpoints'];
+          echo "</li>";
         }
-      }
-     ?>
+         ?>
+    </ul>
+    <h1>Snacks 2</h1>
+    <p>
+      Passare come parametri GET name, mail e age e verificare (cercando i metodi
+      che non conosciamo nella documentazione) che name sia più lungo di 3 caratteri,
+      che mail contenga un punto e una chiocciola e che age sia un numero.
+      Se tutto è ok stampare "Accesso riuscito", altrimenti "Accesso negato"
+    </p>
   </body>
 </html>
