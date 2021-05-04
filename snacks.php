@@ -57,9 +57,9 @@
 
       for($i=0;$i<count($hometeam);$i++){
         if($hometeam) {
-          echo "<div class='home'>" . $hometeam[$i] . "</div>";
+          echo "<div class='home'>" . $hometeam[$i] . $homept[$i] . "</div>";
         } else {
-          echo "<div class='guest'>" . $guesteam[$i] . "</div>";
+          echo "<div class='guest'>" . $guesteam[$i] . $guestpt[$i] . "</div>";
         }
       }
      ?>
